@@ -1,38 +1,37 @@
-getgenv().NailFarm = true; --Change to true an vise versa
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/batusz/uilibrarys/main/mercury_ui_lib"))()
 
---Antiafk https://v3rmillion.net/showthread.php?tid=772135
-local vu = game:GetService("VirtualUser")
-    plr.Idled:connect(function()
-       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-       wait(1)
-       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    end)
+local gui = Library:create{
+    Theme = Library.Themes.Serika
+}
 
+local tab = gui:tab{
+    Icon = "rbxassetid://6034996695",
+    Name = "AutoFarm"
+}
 
-repeat
-if getgenv().NailFarm == false then
-    print("AutoFarm = Off")
-if getgenv().NailFarm == true then
-    print("AutoFarm = On")
-    end
-end
-if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125) then
-    print("Not at designated area")
-if print("Not at designated area") then
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)
-    end
-end
-if game.Workspace.NailGiver.CFrame ~= game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame then
-    print("NailGiver is not at HumanoidRootPart Please try again")
-if print("NailGiver is not at HumanoidRootPart Please try again") then
-    game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        end
-    end
-until game.Workspace.NailGiver.CFrame == game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame and game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame == CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)
-
-while wait() do
-    if getgenv().NailFarm == true then
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
-    game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    end
-end
+tab:button({
+    Name = "AutoFarm",
+    Callback = function()
+        tab:prompt{
+            Title = "AutoFarm Preparing OwO",
+            Text = "JK",
+            Buttons = {
+                AutoFarm = function()
+                while wait() do
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
+                    game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                        end
+        --Antiafk https://v3rmillion.net/showthread.php?tid=772135
+        local vu = game:GetService("VirtualUser")
+        plr.Idled:connect(function()
+        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        wait(1)
+        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+                    end)
+                end
+                
+                }
+            }
+        end,
+    }
+)
