@@ -27,8 +27,6 @@ tab:button({
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
                     game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                         end
-
-                    end)
                 end
                 
                 }
