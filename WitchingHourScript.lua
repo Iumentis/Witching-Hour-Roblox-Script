@@ -1,5 +1,11 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/batusz/uilibrarys/main/mercury_ui_lib"))()
 
+-- Made by Airwav#2162
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+end)
+
+
 local gui = Library:create{
     Theme = Library.Themes.Serika
 }
@@ -21,12 +27,7 @@ tab:button({
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
                     game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                         end
-        --Antiafk https://v3rmillion.net/showthread.php?tid=772135
-        local vu = game:GetService("VirtualUser")
-        plr.Idled:connect(function()
-        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-        wait(1)
-        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+
                     end)
                 end
                 
