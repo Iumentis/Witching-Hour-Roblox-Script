@@ -23,12 +23,13 @@ tab:button({
             Text = "JK",
             Buttons = {
                 AutoFarm = function()
-                    while true do wait(0.2)
-                        if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125) then
-                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)
-                        
+                    while true do wait(0.5)
+                        if game:GetService("Players").LocalPlayer.TeamColor ~= game:GetService("Teams").Spectating.TeamColor then
+                        local player = game.Players.LocalPlayer
+                        player.Character.Head:Destroy()
+                    else wait(0.2)
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
-                        game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                        game.Workspace.NailGiver.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)
                                         end
                                     end
                                 end
@@ -37,11 +38,11 @@ tab:button({
                     end,
                     })
 tab:button({
-    Name = "AutoFarmOff",
+    Name = "AutoFarmOff (Not working)",
     Callback = function()
         tab:prompt{
-            Title = "Clicking This Will Turn The AutoFarm Off",
-            Text = "Do You Still Want To Continue",
+            Title = "This no longer works. Please wait for update!",
+            Text = "Do You Still Want To Continue. This will respawn your player",
             Buttons = {
                         Yes = function()
                     local player = game.Players.LocalPlayer
@@ -51,4 +52,3 @@ tab:button({
                             }
                         end,
                     })
-                
