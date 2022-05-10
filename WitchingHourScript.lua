@@ -23,14 +23,32 @@ tab:button({
             Text = "JK",
             Buttons = {
                 AutoFarm = function()
-                while wait() do
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
-                    game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                        end
-                end
+                    while true do wait(0.2)
+                        if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame ~= CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125) then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)
+                        
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
+                        game.Workspace.NailGiver.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                        end
+                                    end
+                                end
+                            }
+                        }
+                    end,
+                    })
+tab:button({
+    Name = "AutoFarmOff",
+    Callback = function()
+        tab:prompt{
+            Title = "Clicking This Will Turn The AutoFarm Off",
+            Text = "Do You Still Want To Continue",
+            Buttons = {
+                        Yes = function()
+                    local player = game.Players.LocalPlayer
+                       player.Character.Head:Destroy()
+                                    end
+                                }
+                            }
+                        end,
+                    })
                 
-                }
-            }
-        end,
-    }
-)
