@@ -23,11 +23,11 @@ tab:button({
             Text = "JK",
             Buttons = {
                 AutoFarm = function()
-                    while true do wait(0.5)
+                    while true do wait(0.1)
                         if game:GetService("Players").LocalPlayer.TeamColor ~= game:GetService("Teams").Spectating.TeamColor then
                         local player = game.Players.LocalPlayer
                         player.Character.Head:Destroy()
-                    else wait(0.2)
+                    else wait(0.1)
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)    
                         game.Workspace.NailGiver.CFrame = CFrame.new(1149.9324951171875, 61.9999885559082, -814.690673828125)
                                         end
