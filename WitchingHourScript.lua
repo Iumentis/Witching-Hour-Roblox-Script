@@ -32,4 +32,4 @@ tab:Button("Anti-Afk", "This will start the AntiAfk!", function()
                 bb:CaptureController()bb:ClickButton2(Vector2.new())
             end)
         end)
---Don't mind me just just used for Commit Change
+--Commit Change don't mind me
